@@ -1,0 +1,41 @@
+{
+  "name": "japseyz/simple-jdf",
+  "description": "A package for creating simple JDF messages",
+  "type": "library",
+  "keywords": ["jdf"],
+  "homepage": "https://github.com/japseyz/simple-jdf",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Jesper Jacobsen",
+      "email": "japseyz@japseyz.com",
+      "homepage": "https://japseyz.com"
+    },
+    {
+      "name": "Joe Pritchard",
+      "email": "joe@joe-pritchard.uk",
+      "homepage": "https://joe-pritchard.uk"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/japseyz/simple-jdf/issues",
+    "source": "https://github.com/japseyz/simple-jdf"
+  },
+  "require": {
+    "php": "^7.4",
+    "ext-curl": "*",
+    "laravel/framework": "7.*"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {"JapSeyz\\SimpleJDF\\": "src/"}
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "JapSeyz\\SimpleJDF\\Providers\\ServiceProvider"
+      ]
+    }
+  }
+}
