@@ -25,7 +25,7 @@ class Job extends BaseJDF
         return $this;
     }
 
-    public function setPrintFile(string $file_name, int $quantity = 1)
+    public function setPrintFile(string $url, int $quantity = 1)
     {
         // add a layout element and filespec for this document within the ResourcePool
         $runlist = $this->resourcePool()->addChild('RunList');
@@ -34,10 +34,8 @@ class Job extends BaseJDF
         $runlist->addAttribute('Status', 'Available');
 
         $layout_element = $runlist->addChild('LayoutElement');
-        $file_path_for_jdf = $this->formatPrintFilePath($file_name);
-
         $file_spec = $layout_element->addChild('FileSpec');
-        $file_spec->addAttribute('URL', $file_path_for_jdf);
+        $file_spec->addAttribute('URL', $url);
 
         // now we need to reference our RunList in ResourceLinkPool
         $this->linkResource('RunList', 'Input', ['CombinedProcessIndex' => '0']);

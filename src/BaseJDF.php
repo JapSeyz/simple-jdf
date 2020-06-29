@@ -12,7 +12,7 @@ class BaseJDF
 {
     protected SimpleXMLElement $root;
     protected String $author;
-    protected array $root_nodes = ['AuditPool', 'ResourcePool', 'ResourceLinkPool'];
+    private array $root_nodes = ['AuditPool', 'ResourcePool', 'ResourceLinkPool'];
 
     public function __construct()
     {
@@ -24,6 +24,8 @@ class BaseJDF
         $node_type = Str::Studly($method);
 
         if (! \in_array($node_type, $this->root_nodes, true)) {
+            \Log::debug($this->root_nodes);
+
             throw new BadMethodCallException('Unknown node type \'' . $node_type . '\'');
         }
 
