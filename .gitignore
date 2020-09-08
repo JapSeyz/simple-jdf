@@ -6,3 +6,5 @@ gen
 composer.phar
 composer.lock
 /vendor/
+*.cache
+*.bak
